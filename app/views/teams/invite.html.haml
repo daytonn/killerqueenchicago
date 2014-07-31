@@ -1,0 +1,11 @@
+= form_tag(team_send_invites_path(@team), method: "post") do
+  = label_tag(:teammates, "Invite teammates:")
+  %ul#invitees
+  = submit_tag("Invite")
+
+- content_for :deferred_scripts do
+  :javascript
+    $("#invitees").tagit({
+      fieldName: "invitees[]",
+      tagLimit: 5,
+    });

@@ -1,0 +1,22 @@
+Dashboard
+
+- if current_user.on_team?
+  %p
+    %strong Team:
+    #{current_user.team.name}
+
+  %h2 Teammates
+  - if current_user.teammates.present?
+    %ul
+      - current_user.teammates.each do |teammate|
+        %li= teammate.username
+  - if current_user.captain?
+    = link_to "Invite Teammates", team_invite_path(current_user.team)
+    %h2 Open Invitations
+    %ul
+      - current_user.invitations.active.each do |invitation|
+        %li= invitation.invitee_email
+- else
+  %ul
+    %li= link_to "Create Team", new_team_path
+    %li= link_to "Join Team"

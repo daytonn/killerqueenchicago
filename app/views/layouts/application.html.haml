@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title Killer Queen Chicago
+    = csrf_meta_tags
+    %meta{ content: "width=device-width, user-scalable=no", name: "viewport" }
+    = stylesheet_link_tag "application", media: "all"
+
+  %body{ id: "#{controller_name}-controller", class: "#{action_name}-action", ontouchstart: "" }
+    #container
+      = render 'shared/notifications'
+      %header#header
+        = render "shared/main_navigation"
+      %section#content
+        = yield
+      %footer#footer
+    = javascript_include_tag "application"
+    = yield :deferred_scripts
