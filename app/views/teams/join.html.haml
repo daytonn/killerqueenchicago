@@ -1,0 +1,8 @@
+- if current_user.on_team?
+  %p You're already on the "#{current_user.team.name}" team.
+- else
+  %ul
+    - @teams.each do |team|
+      %li
+        = team.name
+        = link_to "Join Team", team_join_path(team)

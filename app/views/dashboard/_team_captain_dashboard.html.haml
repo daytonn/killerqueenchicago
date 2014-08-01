@@ -1,0 +1,19 @@
+= link_to "Invite Teammates", team_invite_path(current_user.team)
+%h2 Open Invitations
+- if current_user.invitations.active.present?
+  %ul
+    - current_user.invitations.active.each do |invitation|
+      %li= invitation.invitee_email
+- else
+  %p No open invitations
+
+%h2 Membership Requests
+- if @membership_requests.present?
+  %ul
+    - @membership_requests.each do |membership_request|
+      %li
+        #{membership_request.requester.username } (#{membership_request.requester.email})
+        = link_to "Accept", team_accept_path(current_user.team, membership_request)
+        = link_to "Reject", team_reject_path(current_user.team, membership_request)
+- else
+  %p No membership requests

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   belongs_to :team
   has_many :invitations
+  has_one :team_membership_request
 
   def on_team?
     team.present?

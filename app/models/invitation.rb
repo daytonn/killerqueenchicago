@@ -5,6 +5,6 @@ class Invitation < ActiveRecord::Base
   scope :active, -> { where(accepted_at: nil) }
 
   def send_invitation
-    InvitationMailer.invitation_created(invitee_email, user).deliver
+    TeamMailer.invitation_created(invitee_email, user).deliver
   end
 end

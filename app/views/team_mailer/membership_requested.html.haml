@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p
+      #{@requester.username} (#{@requester.email}) wants to be on your Killer Queen team!
+    %p
+      #{link_to "Log in", dashboard_url}, to accept or reject their request!
