@@ -1,3 +1,8 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
 development:
   adapter: postgresql
   encoding: unicode
@@ -15,11 +20,3 @@ test:
   username: daytonn
   password:
   min_messages: WARNING
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: killer_queen
-  pool: 5
-  username: cooktabulous
-  password: 8VQV3gfGW3NXrEew2888F2LBg32cYT
