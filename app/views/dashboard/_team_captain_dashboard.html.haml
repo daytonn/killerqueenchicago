@@ -1,5 +1,5 @@
 = link_to "Invite Teammates", team_invite_path(current_user.team)
-%h2 Open Invitations
+%h3 Open Invitations
 - if current_user.invitations.active.present?
   %ul
     - current_user.invitations.active.each do |invitation|
@@ -7,7 +7,7 @@
 - else
   %p No open invitations
 
-%h2 Membership Requests
+%h3 Membership Requests
 - if @membership_requests.present?
   %ul
     - @membership_requests.each do |membership_request|

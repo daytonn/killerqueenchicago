@@ -4,15 +4,23 @@
     %title Killer Queen Chicago
     = csrf_meta_tags
     %meta{ content: "width=device-width, user-scalable=no", name: "viewport" }
+    = javascript_include_tag "vendor/modernizr"
     = stylesheet_link_tag "application", media: "all"
 
   %body{ id: "#{controller_name}-controller", class: "#{action_name}-action", ontouchstart: "" }
-    #container
-      = render 'shared/notifications'
-      %header#header
+    #body-left-color-bg
+    #body-right-color-bg
+    %header#header.sticky
+      #header-left-color-bg
+      #header-right-color-bg
+      %nav.top-bar{"data-topbar" => ""}
+        = render "shared/header"
         = render "shared/main_navigation"
-      %section#content
+    #container.row
+      .large-12.columns
+        = render 'shared/notifications'
         = yield
-      %footer#footer
-    = javascript_include_tag "application"
-    = yield :deferred_scripts
+        %footer#footer.row
+          = render "shared/footer"
+        = javascript_include_tag "application"
+        = yield :deferred_scripts

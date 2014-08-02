@@ -1,8 +1,11 @@
-%ul#main-navigation
-  %p
-  - if user_signed_in?
-    Welcome #{current_user.username}
-    %li= link_to "Sign Out", destroy_user_session_path, method: :delete
-  - else
-    %li= link_to "Sign In", new_user_session_path
-    %li= link_to "Sign Up", new_user_registration_path
+%section.top-bar-section
+  %ul.right
+    - if user_signed_in?
+      %li= link_to "Welcome #{current_user.username}", edit_user_registration_path
+      %li= link_to "Dashboard", dashboard_path
+    %li= link_to "Calendar", calendar_path
+    - if user_signed_in?
+      %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+    - else
+      %li= link_to "Sign In", new_user_session_path
+      %li= link_to "Sign Up", new_user_registration_path

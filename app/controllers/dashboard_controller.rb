@@ -7,4 +7,7 @@ class DashboardController < ApplicationController
       @membership_requests = TeamMembershipRequest.includes(:requester).open.where(team: current_user.team)
     end
   end
+
+  def calendar
+  end
 end

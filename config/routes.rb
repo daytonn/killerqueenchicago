@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get "teams/:id/join", to: "teams#join_team", as: "team_join"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
-  root to: "pages#home"
   get "dashboard", to: "dashboard#index"
+  get "calendar", to: "pages#calendar"
+  get "rules", to: "pages#rules"
+  get "about", to: "pages#about"
+  root to: "pages#home"
 end

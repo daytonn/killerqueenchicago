@@ -1,0 +1,90 @@
+%screen-half {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+#body-left-color-bg {
+  @extend %screen-half;
+  z-index: 1;
+  left: 0;
+  border-right: solid 3px $blue;
+  background: {
+    color: $gold;
+  }
+}
+
+#body-right-color-bg {
+  @extend %screen-half;
+  border-left: solid 3px $gold;
+  z-index: 2;
+  right: 0;
+  background: {
+    color: $blue;
+  }
+}
+
+%header-half {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+#header {
+  position: relative;
+  z-index: 4;
+}
+
+#header-left-color-bg {
+  @extend %header-half;
+  left: 0;
+  border-right: solid 3px $gold;
+  background: {
+    color: $blue;
+  }
+}
+
+#header-right-color-bg {
+  @extend %header-half;
+  border-left: solid 3px $blue;
+  right: 0;
+  background: {
+    color: $gold;
+  }
+}
+
+#container {
+  position: relative;
+  padding: 1em 0 0 0;
+  z-index: 3;
+  background: {
+    color: white;
+  }
+}
+
+.top-bar {
+  box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.75);
+}
+
+.title-area {
+  h1 {
+    a {
+      display: inline-block;
+      margin: 3px 0 0 1em;
+      width: 332px !important;
+      height: 61px !important;
+      background: {
+        image: image-url("logo.png");
+        repeat: no-repeat;
+      }
+    }
+  }
+}

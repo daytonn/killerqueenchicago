@@ -8,9 +8,9 @@ gem "carrierwave"
 gem "devise"
 gem "fog"
 gem "font-awesome-rails"
+gem "foundation-rails"
 gem "haml-rails"
 gem "jquery-rails"
-gem 'jquery-ui-rails'
 gem "kaminari"
 gem "mini_magick"
 gem "newrelic_rpm"
@@ -19,6 +19,7 @@ gem "rails", "4.1.4"
 gem "sass-rails"
 gem "uglifier", ">= 1.3.0"
 gem "unicorn-rails"
+gem 'jquery-ui-rails'
 
 group :production do
   gem "rails_12factor"

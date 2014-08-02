@@ -2,7 +2,7 @@
   %strong Team:
   #{current_user.team.name}
 
-%h2 Teammates
+%h3 Teammates
 - if current_user.teammates.present?
   %ul
     - current_user.teammates.each do |teammate|

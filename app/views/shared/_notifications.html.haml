@@ -1,6 +1,10 @@
 - if notice || alert
   .notifications
     - if notice
-      .notice= notice
+      .alert-box.success.radius{:data => {'alert' => true}}
+        = notice
+        %a.close{ href: "javascript:;" } &times;
     - if alert
-      .alert= alert
+      .alert-box.alert.radius{:data => {'alert' => true}}
+        = alert
+        %a.close{ href: "javascript:;" } &times;
