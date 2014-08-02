@@ -1,11 +1,22 @@
-= form_tag(team_send_invites_path(@team), method: "post") do
-  = label_tag(:teammates, "Invite teammates:")
-  %ul#invitees
-  = submit_tag("Invite")
+%h2 Invite Teamates
+.large-6.columns
+  = form_tag team_send_invites_path(@team), method: "post" do
+    %p Enter the email addresses of the people you wish to invite to your team:
+    %ul#invitees
+    = submit_tag "Invite", class: "button"
 
-- content_for :deferred_scripts do
-  :javascript
-    $("#invitees").tagit({
-      fieldName: "invitees[]",
-      tagLimit: 5,
-    });
+  - content_for :deferred_scripts do
+    :javascript
+      var invitees = $("#invitees");
+      invitees.tagit({
+        fieldName: "invitees[]",
+        tagLimit: 5,
+        beforeTagAdded: function(event, ui) {
+          var email = ui.tagLabel;
+          if (!email.match(/.+@.+\..+/)) {
+            alert("Not a valid email address!");
+            event.preventDefault();
+            return false;
+          }
+        }
+      });

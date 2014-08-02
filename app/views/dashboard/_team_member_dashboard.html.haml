@@ -1,8 +1,6 @@
-%p
-  %strong Team:
-  #{current_user.team.name}
+%h3 #{current_user.team.name}
 
-%h3 Teammates
+%h4 Roster
 - if current_user.teammates.present?
   %ul
     - current_user.teammates.each do |teammate|

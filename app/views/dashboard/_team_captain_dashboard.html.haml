@@ -1,19 +1,22 @@
-= link_to "Invite Teammates", team_invite_path(current_user.team)
-%h3 Open Invitations
-- if current_user.invitations.active.present?
-  %ul
-    - current_user.invitations.active.each do |invitation|
-      %li= invitation.invitee_email
-- else
-  %p No open invitations
+.large-8.columns
+  = render "team_member_dashboard"
+.large-4.columns
+  = link_to "Invite Teammates", team_invite_path(current_user.team), class: "button"
+  %h3 Open Invitations
+  - if current_user.invitations.active.present?
+    %ul.open-invitations
+      - current_user.invitations.active.each do |invitation|
+        %li= invitation.invitee_email
+  - else
+    %p.open-invitations No open invitations
 
-%h3 Membership Requests
-- if @membership_requests.present?
-  %ul
-    - @membership_requests.each do |membership_request|
-      %li
-        #{membership_request.requester.username } (#{membership_request.requester.email})
-        = link_to "Accept", team_accept_path(current_user.team, membership_request)
-        = link_to "Reject", team_reject_path(current_user.team, membership_request)
-- else
-  %p No membership requests
+  %h3 Membership Requests
+  - if @membership_requests.present?
+    %ul.membership-requests
+      - @membership_requests.each do |membership_request|
+        %li
+          #{membership_request.requester.username } (#{membership_request.requester.email})
+          = link_to "Accept", team_accept_path(current_user.team, membership_request)
+          = link_to "Reject", team_reject_path(current_user.team, membership_request)
+  - else
+    %p.membership-requests No membership requests

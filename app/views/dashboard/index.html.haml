@@ -1,7 +1,8 @@
 %h2 Dashboard
 - if current_user.on_team?
-  = render "team_member_dashboard"
   - if current_user.captain?
     = render "team_captain_dashboard"
+  - else
+    = render "team_member_dashboard"
 - else
   = render "free_agent_dashboard"

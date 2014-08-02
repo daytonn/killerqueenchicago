@@ -52,10 +52,14 @@ class TeamsController < ApplicationController
   end
 
   def send_invites
-    params[:invitees].each do |email|
-      Invitation.create(invitee_email: email, user_id: current_user.id)
+    if params[:invitees]
+      params[:invitees].each do |email|
+        Invitation.create(invitee_email: email, user_id: current_user.id)
+      end
+      redirect_to dashboard_path, notice: "Invitations sent"
+    else
+      redirect_to "invite"
     end
-    redirect_to dashboard_path, notice: "Invitations sent"
   end
 
   def join
