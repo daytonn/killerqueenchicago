@@ -1,31 +1,30 @@
 %article
   %h3
-    %a{href: "#"} Blog Post Title
+    = link_to "Join A Team Now!", root_path
   %h6
-    Written by
-    %a{href: "#"} John Smith
-    on August 12, 2012.
+    %small Written by Dayton Nolan on August 3, 2014.
   .row
-    .large-6.columns
-      %p Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.
-      %p Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.
-    .large-6.columns
-      %img{src: "http://placehold.it/400x240&text=[img]"}/
-  %p Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.
-  %p Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.
-%hr/
-%article
-  %h3
-    %a{href: "#"} Blog Post Title
-  %h6
-    Written by
-    %a{href: "#"} John Smith
-    on August 12, 2012.
-  .row
-    .large-6.columns
-      %p Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.
-      %p Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.
-    .large-6.columns
-      %img{src: "http://placehold.it/400x240&text=[img]"}/
-  %p Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.
-  %p Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.
+    .large-9.columns
+      %p Welcome of to the home of Chicago's first Killer Queen league and tournament community. Brought to you by dedicated fans of the new and amazingly entertaining arcade game: Killer Queen.
+      %p The goal of this website is to host a tournament and regular league play. In order to do that, this site has been built with the basic functionality of creating and joining teams.
+      %p Once enough teams have been created, a tournament and regular league play will be organized and the details shared with the members and made publicly available on our #{link_to "calendar", calendar_path}.
+      %p
+        %strong= link_to "Join Now!", new_user_registration_path
+        to get started.
+    .large-3.columns.sidebar
+      %ul
+        %li= link_to "Sign In", new_user_session_path
+        %li= link_to "Sign Up", new_user_registration_path
+        %li= link_to "Calendar", calendar_path
+        %li
+          %a.twitter-follow-button{ "data-show-count" => "false", "data-size" => "large", href: "https://twitter.com/KQChicago" } @KQChicago
+          :javascript
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        %li
+          %a.twitter-follow-button{"data-show-count" => "false", "data-size" => "large", href: "https://twitter.com/LoganArcade"} @LoganArcade
+          :javascript
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        %li
+          %a.twitter-follow-button{"data-show-count" => "false", "data-size" => "large", href: "https://twitter.com/KillerQueenGame"} @KillerQueenGame
+          :javascript
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');

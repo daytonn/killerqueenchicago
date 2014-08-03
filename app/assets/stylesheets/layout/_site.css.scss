@@ -109,3 +109,9 @@ body, html {
     @include alert($alert-color, $global-radius);
   }
 }
+
+.sidebar {
+  ul {
+    @extend %list-reset;
+  }
+}
