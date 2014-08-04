@@ -26,7 +26,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(team_params)
+    @team = Team.new(team_params.merge(captain_id: current_user.id))
 
     if @team.save
       redirect_to @team, notice: 'Team was successfully created.'
@@ -36,7 +36,7 @@ class TeamsController < ApplicationController
   end
 
   def update
-    if @team.update(team_params)
+    if @team.update(team_params.merge(captain_id: current_user.id))
       redirect_to @team, notice: 'Team was successfully updated.'
     else
       render :edit
@@ -98,6 +98,6 @@ class TeamsController < ApplicationController
     end
 
     def team_params
-      params.require(:team).permit(:name).merge(captain_id: current_user.id)
+      params.require(:team).permit(:name)
     end
 end
