@@ -27,7 +27,7 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params.merge(captain_id: current_user.id))
-    @team.memebers << current_user
+    @team.members << current_user
 
     if @team.save
       redirect_to dashboard_path, notice: 'Team was successfully created.'
