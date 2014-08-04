@@ -27,9 +27,10 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params.merge(captain_id: current_user.id))
+    @team.memebers << current_user
 
     if @team.save
-      redirect_to @team, notice: 'Team was successfully created.'
+      redirect_to dashboard_path, notice: 'Team was successfully created.'
     else
       render :new
     end
