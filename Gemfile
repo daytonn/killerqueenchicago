@@ -2,6 +2,7 @@ source "https://rubygems.org"
 ruby "2.1.2"
 
 gem "active_model_serializers"
+gem "activeadmin", github: "gregbell/active_admin"
 gem "awesome_print"
 gem "bcrypt-ruby"
 gem "carrierwave"
