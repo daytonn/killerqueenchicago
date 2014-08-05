@@ -16,6 +16,7 @@ class TeamsController < ApplicationController
   end
 
   def show
+    redirect_to dashboard_path
   end
 
   def new
