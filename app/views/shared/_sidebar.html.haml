@@ -1,16 +1,11 @@
-%h5 Categories
-%ul.side-nav
-  %li
-    %a{href: "#"} News
-  %li
-    %a{href: "#"} Code
-  %li
-    %a{href: "#"} Design
-  %li
-    %a{href: "#"} Fun
-  %li
-    %a{href: "#"} Weasels
-.panel
-  %h5 Featured
-  %p Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.
-  %a{href: "#"} Read More &#8594;
+.large-3.columns.sidebar
+  %ul
+    %li= link_to "Sign In", new_user_session_path
+    %li= link_to "Sign Up", new_user_registration_path
+    %li= link_to "Calendar", calendar_path
+    %li
+      %a.twitter-follow-button{ "data-show-count" => "false", "data-size" => "large", href: "https://twitter.com/KQChicago" } @KQChicago
+    %li
+      %a.twitter-follow-button{"data-show-count" => "false", "data-size" => "large", href: "https://twitter.com/LoganArcade"} @LoganArcade
+    %li
+      %a.twitter-follow-button{"data-show-count" => "false", "data-size" => "large", href: "https://twitter.com/KillerQueenGame"} @KillerQueenGame

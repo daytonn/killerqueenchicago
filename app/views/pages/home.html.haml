@@ -1,30 +1,18 @@
-%article
-  %h3
-    = link_to "Join A Team Now!", root_path
-  %h6
-    %small Written by Dayton Nolan on August 3, 2014.
-  .row
-    .large-9.columns
+.row
+  .large-9.columns
+    %article
+      %h3 Tournament Sunday, August 31st
+      %p Logan Arcade is hosting a Killer Queen tournament on Aug 31st! Matches will be best-of-five as teams of five face off in a double-elimination, winner-takes-all event. You must have at least five players to compete.
+      %p Teams can sign up anytime before 1pm on the day of the tournament. Tournament will start at 2pm. Registration is $25 per team to enter. We just need your team name and your fee to get you locked in. You may leave your team name and registration fee with your bartender. Teams MUST have five players on the day of the tournament. No exceptions. You can bring your grandmother at the last minute, or just grab someone random if need bee. We don't mind!
+      %p If you don't have five players that you think wanna play, no problem! We are having a sign-up / meet-up this Sunday, August 10th. Come over between 2-4 pm, meet some new friends and create a team that day or just give us your name and we'll get you set up on a team. This will give you plenty of time to get some practice in and devise your strategy to take the hive! Come over, make friends and have some fun!
+
+    %article
+      %h3
+        = link_to "Join A Team Now!", root_path
       %p Welcome of to the home of Chicago's first Killer Queen league and tournament community. Brought to you by dedicated fans of the new and amazingly entertaining arcade game: Killer Queen.
       %p The goal of this website is to host a tournament and regular league play. In order to do that, this site has been built with the basic functionality of creating and joining teams.
       %p Once enough teams have been created, a tournament and regular league play will be organized and the details shared with the members and made publicly available on our #{link_to "calendar", calendar_path}.
       %p
         %strong= link_to "Join Now!", new_user_registration_path
         to get started.
-    .large-3.columns.sidebar
-      %ul
-        %li= link_to "Sign In", new_user_session_path
-        %li= link_to "Sign Up", new_user_registration_path
-        %li= link_to "Calendar", calendar_path
-        %li
-          %a.twitter-follow-button{ "data-show-count" => "false", "data-size" => "large", href: "https://twitter.com/KQChicago" } @KQChicago
-          :javascript
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-        %li
-          %a.twitter-follow-button{"data-show-count" => "false", "data-size" => "large", href: "https://twitter.com/LoganArcade"} @LoganArcade
-          :javascript
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-        %li
-          %a.twitter-follow-button{"data-show-count" => "false", "data-size" => "large", href: "https://twitter.com/KillerQueenGame"} @KillerQueenGame
-          :javascript
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  = render "shared/sidebar"
